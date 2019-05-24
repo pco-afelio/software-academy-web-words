@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+
+	<servlet>
+		<servlet-name>GameLight</servlet-name>
+		<servlet-class>be.afelio.pco.web.words.WordGameServlet</servlet-class>
+		<init-param>
+			<param-name>minWordLength</param-name>
+			<param-value>5</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>GameHard</servlet-name>
+		<servlet-class>be.afelio.pco.web.words.WordGameServlet</servlet-class>
+		<init-param>
+			<param-name>minWordLength</param-name>
+			<param-value>10</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GameLight</servlet-name>
+		<!-- http://localhost:8080/words/playlight -->
+		<url-pattern>/playlight</url-pattern>
+		<!-- http://localhost:8080/words/toto.dolight -->
+		<url-pattern>*.dolight</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>GameHard</servlet-name>
+		<url-pattern>/playhard</url-pattern>
+		<url-pattern>*.dohard</url-pattern>
+	</servlet-mapping>
+
+</web-app>
